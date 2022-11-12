@@ -1,0 +1,7 @@
+﻿{
+  "FtpHost": "ftp://127.0.0.12",
+  "FtpPassword": "12008",
+  "FtpPath": "/Public",
+  "FtpPort": "21",
+  "FtpUserName": "Reza"
+}

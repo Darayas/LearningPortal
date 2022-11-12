@@ -1,0 +1,29 @@
+﻿@inject ILanguageApplication _languageApplication
+
+<a href="#">
+    <span class="dot-count bg-warning"></span><i class="feather-globe font-xl text-current"></i>
+    <div class="menu-dropdown drp-lang">
+        @foreach (var item in await _languageApplication.GetLanguagesForSiteLangAsync())
+        {
+            <div class="card bg-transparent-card menuItem">
+                <span onclick="location.href='@SetLang(item.Abbreviation)'"> @item.NativeName </span>
+            </div>
+        }
+    </div>
+</a>
+
+@functions{
+    string SetLang(string abbreviation)
+    {
+        string host = Context.Request.Scheme + "://" + Context.Request.Host;
+        string path = Context.Request.Path;
+        string parameter = Context.Request.QueryString.HasValue ? Context.Request.QueryString.Value : "";
+
+        var spPath = path.Trim('/').Split('/').ToList();
+        spPath.RemoveAt(0);
+
+        path = "/" + abbreviation + "/" + string.Join('/', spPath);
+
+        return host + path + parameter;
+    }
+}

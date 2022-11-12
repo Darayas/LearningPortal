@@ -1,0 +1,48 @@
+
+.mont-font {font-family: "Montserrat", sans-serif; }
+.roboto-font {font-family: 'Roboto', sans-serif;}
+.open-font {font-family: 'Open Sans', sans-serif;}
+.fredoka-font {font-family: 'Fredoka One', cursive;}
+
+@font-face {
+    font-family: 'Yekan';
+    font-weight: 100;
+    src: url('/fonts/persian/IranYekan/100/11627467.ttf') format('truetype'), url('/fonts/persian/IranYekan/100/f9b12859.eot') format('embedded-opentype'), url('/fonts/persian/IranYekan/100/f78b74c5.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Yekan';
+    font-weight: 300;
+    src: url('/fonts/persian/IranYekan/300/088dfe8a.woff') format('woff'), url('/fonts/persian/IranYekan/300/2c83275a.ttf') format('truetype'), url('/fonts/persian/IranYekan/300/699085bd.eot') format('embedded-opentype'), url('/fonts/persian/IranYekan/300/a80f71ff.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Yekan';
+    font-weight: 400;
+    src: url('/fonts/persian/IranYekan/400/1fdcadec.woff2') format('woff2'), url('/fonts/persian/IranYekan/400/56a1baa4.woff') format('woff'), url('/fonts/persian/IranYekan/400/5bea6c32.eot') format('embedded-opentype'), url('/fonts/persian/IranYekan/400/79533773.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Yekan';
+    font-weight: 500;
+    src: url('/fonts/persian/IranYekan/500/492984b8.woff') format('woff'), url('/fonts/persian/IranYekan/500/6387a14a.ttf') format('truetype'), url('/fonts/persian/IranYekan/500/6a51276d.eot') format('embedded-opentype');
+}
+@font-face {
+    font-family: 'Yekan';
+    font-weight: 600;
+    src: url('/fonts/persian/IranYekan/600/2d7cc7cd.woff') format('woff'), url('/fonts/persian/IranYekan/600/7c912e00.eot') format('embedded-opentype'), url('/fonts/persian/IranYekan/600/a7d41f91.ttf') format('truetype'), url('/fonts/persian/IranYekan/600/fe12f13a.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Yekan';
+    font-weight: 700;
+    src: url('/fonts/persian/IranYekan/700/1d9f5870.woff') format('woff'), url('/fonts/persian/IranYekan/700/cea3492e.eot') format('embedded-opentype'), url('/fonts/persian/IranYekan/700/f2ab2738.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Yekan';
+    font-weight: 800;
+    src: url('/fonts/persian/IranYekan/800/44b6abc1.ttf') format('truetype'), url('/fonts/persian/IranYekan/800/5b8cfc1c.eot') format('embedded-opentype'), url('/fonts/persian/IranYekan/800/76ccefec.woff') format('woff');
+}
+@font-face {
+    font-family: 'Yekan';
+    font-weight: 900;
+    src: url('/fonts/persian/IranYekan/900/5f989680.ttf') format('truetype'), url('/fonts/persian/IranYekan/900/b5c0daaf.woff') format('woff'), url('/fonts/persian/IranYekan/900/e2d75f96.eot') format('embedded-opentype');
+}

@@ -1,0 +1,455 @@
+﻿@page "/{culture}"
+@model LearningPortal.WebApp.Pages.Home.IndexModel
+@{
+    Layout = "~/Pages/Shared/_UserLayout.cshtml";
+}
+
+<div class="middle-sidebar-left">
+    <div class="row">
+        <div class="col-lg-12 mb-3">
+            <div class="card rounded-xxl p-lg--5 border-0 bg-no-repeat bg-image-contain banner-wrap" style="background-image: url(https://via.placeholder.com/1100x720.png);;">
+                <div class="card-body p-4">
+                    <h2 class="display3-size fw-400 display2-md-size sm-mt-7 sm-pt-10">Find a perfect <b class="d-lg-block">Online Course</b></h2>
+                    <h4 class="text-grey-500 font-xssss fw-500 ml-1 lh-24">For only course you need to learn web development</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 pt-2">
+            <h2 class="section-title">Explore <b>Categories</b> <a href="#"><i class="feather-edit text-grey-500 font-xs"></i></a></h2>
+        </div>
+
+        <div class="col-lg-12 mt-3">
+            <div class="owl-carousel category-card owl-theme overflow-hidden overflow-visible-xl nav-none">
+                <div class="item">
+                    <div class="card cat-card-hover mr-1 w140 border-0 p-4 rounded-lg text-center" style="background-color: #fcf1eb;">
+                        <div class="card-body p-2 ml-1 ">
+                            <a href="#" class="btn-round-xl bg-white"><img src="https://via.placeholder.com/50x50.png" alt="icon" class="p-2"></a>
+                            <h4 class="fw-600 font-xsss mt-3 mb-0">Bootstrap <span class="d-block font-xsssss fw-500 text-grey-500 mt-2">32 Course</span></h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="card cat-card-hover mr-1 w140 border-0 p-4 rounded-lg text-center" style="background-color: #fff9eb;">
+                        <div class="card-body p-2 ml-1 ">
+                            <a href="#" class="btn-round-xl bg-white"><img src="https://via.placeholder.com/50x50.png" alt="icon" class="p-2"></a>
+                            <h4 class="fw-600 font-xsss mt-3 mb-0">HTML <span class="d-block font-xsssss fw-500 text-grey-500 mt-2">32 Course</span></h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="card cat-card-hover mr-1 w140 border-0 p-4 rounded-lg text-center" style="background-color: #e5f4fb;">
+                        <div class="card-body p-2 ml-1 ">
+                            <a href="#" class="btn-round-xl bg-white"><img src="https://via.placeholder.com/50x50.png" alt="icon" class="p-2"></a>
+                            <h4 class="fw-600 font-xsss mt-3 mb-0">Jquery <span class="d-block font-xsssss fw-500 text-grey-500 mt-2">32 Course</span></h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="card cat-card-hover mr-1 w140 border-0 p-4 rounded-lg text-center" style="background-color: #dcf4f8;">
+                        <div class="card-body p-2 ml-1 ">
+                            <a href="#" class="btn-round-xl bg-white"><img src="https://via.placeholder.com/50x50.png" alt="icon" class="p-2"></a>
+                            <h4 class="fw-600 font-xsss mt-3 mb-0">Sass <span class="d-block font-xsssss fw-500 text-grey-500 mt-2">32 Course</span></h4>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="item">
+                    <div class="card cat-card-hover mr-1 w140 border-0 p-4 rounded-lg text-center" style="background-color: #fcf1eb;">
+                        <div class="card-body p-2 ml-1 ">
+                            <a href="#" class="btn-round-xl bg-white"><img src="https://via.placeholder.com/50x50.png" alt="icon" class="p-2"></a>
+                            <h4 class="fw-600 font-xsss mt-3 mb-0">React <span class="d-block font-xsssss fw-500 text-grey-500 mt-2">32 Course</span></h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="card cat-card-hover mr-1 w140 border-0 p-4 rounded-lg text-center" style="background-color: #fff9eb;">
+                        <div class="card-body p-2 ml-1 ">
+                            <a href="#" class="btn-round-xl bg-white"><img src="https://via.placeholder.com/50x50.png" alt="icon" class="p-2"></a>
+                            <h4 class="fw-600 font-xsss mt-3 mb-0">JAVA <span class="d-block font-xsssss fw-500 text-grey-500 mt-2">32 Course</span></h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="card cat-card-hover mr-1 w140 border-0 p-4 rounded-lg text-center" style="background-color: #e5f4fb;">
+                        <div class="card-body p-2 ml-1 ">
+                            <a href="#" class="btn-round-xl bg-white"><img src="https://via.placeholder.com/50x50.png" alt="icon" class="p-2"></a>
+                            <h4 class="fw-600 font-xsss mt-3 mb-0">Python<span class="d-block font-xsssss fw-500 text-grey-500 mt-2">32 Course</span></h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="card cat-card-hover mr-1 w140 border-0 p-4 rounded-lg text-center" style="background-color: #fcf1eb;">
+                        <div class="card-body p-2 ml-1 ">
+                            <a href="#" class="btn-round-xl bg-white"><img src="https://via.placeholder.com/50x50.png" alt="icon" class="p-2"></a>
+                            <h4 class="fw-600 font-xsss mt-3 mb-0">Mongodb <span class="d-block font-xsssss fw-500 text-grey-500 mt-2">32 Course</span></h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="card cat-card-hover mr-1 w140 border-0 p-4 rounded-lg text-center" style="background-color: #fcf1eb;">
+                        <div class="card-body p-2 ml-1 ">
+                            <a href="#" class="btn-round-xl bg-white"><img src="https://via.placeholder.com/50x50.png" alt="icon" class="p-2"></a>
+                            <h4 class="fw-600 font-xsss mt-3 mb-0">Desinger <span class="d-block font-xsssss fw-500 text-grey-500 mt-2">32 Course</span></h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="card cat-card-hover mr-1 w140 border-0 p-4 rounded-lg text-center" style="background-color: #fff9eb;">
+                        <div class="card-body p-2 ml-1 ">
+                            <a href="#" class="btn-round-xl bg-white"><img src="https://via.placeholder.com/50x50.png" alt="icon" class="p-2"></a>
+                            <h4 class="fw-600 font-xsss mt-3 mb-0">Desinger <span class="d-block font-xsssss fw-500 text-grey-500 mt-2">32 Course</span></h4>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="col-lg-12 pt-5 mb-3">
+            <h2 class="section-title">Popular <b> Classes</b> <a href="#"><i class="feather-edit text-grey-500 font-xs"></i></a></h2>
+        </div>
+
+        <div class="col-lg-12 pt-2">
+            <div class="owl-carousel category-card owl-theme overflow-hidden overflow-visible-xl nav-none">
+                <div class="item">
+                    <div class="card course-card w300 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1 mb-4">
+                        <div class="card-image w-100 mb-3">
+                            <a href="default-course-details.html" class="video-bttn position-relative d-block"><img src="https://via.placeholder.com/400x300.png" alt="image" class="w-100"></a>
+                        </div>
+                        <div class="card-body pt-0">
+                            <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-warning d-inline-block text-warning mr-1">Python</span>
+                            <span class="card-price"><span class="font-xsssss">$</span> 240</span>
+                            <h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><a href="default-course-details.html" class="text-dark text-grey-900">Complete Python Bootcamp From Zero to Hero in Python </a></h4>
+                            <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2"> 32 Lesson </h6>
+                            <ul class="memberlist mt-3 mb-2 ml-0 d-block">
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li class="last-member"><a href="#" class="bg-greylight fw-600 text-grey-500 font-xssss ls-3 text-center">+2</a></li>
+                                <li class="student-apply"><a href="#" class="fw-500 text-grey-500 font-xssss">Student apply</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="card course-card w300 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1 mb-4">
+                        <div class="card-image w-100 mb-3">
+                            <a href="default-course-details.html" class="video-bttn position-relative d-block"><img src="https://via.placeholder.com/400x300.png" alt="image" class="w-100"></a>
+                        </div>
+                        <div class="card-body pt-0">
+                            <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-danger d-inline-block text-danger mr-1">Desinger</span>
+                            <span class="card-price"><span class="font-xsssss">$</span> 40</span>
+                            <h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><a href="default-course-details.html" class="text-dark text-grey-900">Complete Python Bootcamp From Zero to Hero in Python </a></h4>
+                            <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2"> 24 Lesson </h6>
+                            <ul class="memberlist mt-3 mb-2 ml-0 d-block">
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li class="last-member"><a href="#" class="bg-greylight fw-600 text-grey-500 font-xssss ls-3 text-center">+2</a></li>
+                                <li class="student-apply"><a href="#" class="fw-500 text-grey-500 font-xssss">Student apply</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="card course-card w300 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1 mb-4">
+                        <div class="card-image w-100 mb-3">
+                            <a href="default-course-details.html" class="video-bttn position-relative d-block"><img src="https://via.placeholder.com/400x300.png" alt="image" class="w-100"></a>
+                        </div>
+                        <div class="card-body pt-0">
+                            <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-success d-inline-block text-success mr-1">Bootstrap</span>
+                            <span class="card-price"><span class="font-xsssss">$</span> 60</span>
+                            <h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><a href="default-course-details.html" class="text-dark text-grey-900">Java Programming Masterclass for Developers</a></h4>
+                            <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2"> 14 Lesson </h6>
+                            <ul class="memberlist mt-3 mb-2 ml-0 d-block">
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li class="last-member"><a href="#" class="bg-greylight fw-600 text-grey-500 font-xssss ls-3 text-center">+2</a></li>
+                                <li class="student-apply"><a href="#" class="fw-500 text-grey-500 font-xssss">Student apply</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="card course-card w300 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1 mb-4">
+                        <div class="card-image w-100 mb-3">
+                            <a href="default-course-details.html" class="video-bttn position-relative d-block"><img src="https://via.placeholder.com/400x300.png" alt="image" class="w-100"></a>
+                        </div>
+                        <div class="card-body pt-0">
+                            <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-danger d-inline-block text-danger mr-1">Develop</span>
+                            <span class="card-price"><span class="font-xsssss">$</span> 370</span>
+                            <h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><a href="default-course-details.html" class="text-dark text-grey-900">The Data Science Course Complete Data Science </a></h4>
+                            <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2"> 23 Lesson </h6>
+                            <ul class="memberlist mt-3 mb-2 ml-0 d-block">
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li class="last-member"><a href="#" class="bg-greylight fw-600 text-grey-500 font-xssss ls-3 text-center">+2</a></li>
+                                <li class="student-apply"><a href="#" class="fw-500 text-grey-500 font-xssss">Student apply</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="card course-card w300 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1 mb-4">
+                        <div class="card-image w-100 mb-3">
+                            <a href="default-course-details.html" class="video-bttn position-relative d-block"><img src="https://via.placeholder.com/400x300.png" alt="image" class="w-100"></a>
+                        </div>
+                        <div class="card-body pt-0">
+                            <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-danger d-inline-block text-danger mr-1">Develop</span>
+                            <span class="card-price"><span class="font-xsssss">$</span> 370</span>
+                            <h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><a href="default-course-details.html" class="text-dark text-grey-900">The Data Science Course Complete Data Science </a></h4>
+                            <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2"> 23 Lesson </h6>
+                            <ul class="memberlist mt-3 mb-2 ml-0 d-block">
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li class="last-member"><a href="#" class="bg-greylight fw-600 text-grey-500 font-xssss ls-3 text-center">+2</a></li>
+                                <li class="student-apply"><a href="#" class="fw-500 text-grey-500 font-xssss">Student apply</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-12 pt-0 mb-3">
+            <h2 class="section-title">Latest <b> Classes</b> <a href="#"><i class="feather-edit text-grey-500 font-xs"></i></a></h2>
+        </div>
+
+
+        <div class="col-lg-12 pt-2">
+            <div class="owl-carousel category-card owl-theme overflow-hidden overflow-visible-xl nav-none">
+
+                <div class="item">
+                    <div class="card course-card w300 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1 mb-4">
+                        <div class="card-image w-100 mb-3">
+                            <a href="default-course-details.html" class="video-bttn position-relative d-block"><img src="https://via.placeholder.com/400x300.png" alt="image" class="w-100"></a>
+                        </div>
+                        <div class="card-body pt-0">
+                            <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-danger d-inline-block text-danger mr-1">Desinger</span>
+                            <span class="card-price"><span class="font-xsssss">$</span> 450</span>
+                            <h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><a href="default-course-details.html" class="text-dark text-grey-900">Complete Python Bootcamp From Zero to Hero in Python </a></h4>
+                            <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2"> 24 Lesson </h6>
+                            <ul class="memberlist mt-3 mb-2 ml-0 d-block">
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li class="last-member"><a href="#" class="bg-greylight fw-600 text-grey-500 font-xssss ls-3 text-center">+2</a></li>
+                                <li class="student-apply"><a href="#" class="fw-500 text-grey-500 font-xssss">Student apply</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="card course-card w300 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1 mb-4">
+                        <div class="card-image w-100 mb-3">
+                            <a href="default-course-details.html" class="video-bttn position-relative d-block"><img src="https://via.placeholder.com/400x300.png" alt="image" class="w-100"></a>
+                        </div>
+                        <div class="card-body pt-0">
+                            <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-warning d-inline-block text-warning mr-1">Python</span>
+                            <span class="card-price"><span class="font-xsssss">$</span> 670</span>
+                            <h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><a href="default-course-details.html" class="text-dark text-grey-900">Fundamentals for Scrum Master and Agile Projects </a></h4>
+                            <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2"> 32 Lesson </h6>
+                            <ul class="memberlist mt-3 mb-2 ml-0 d-block">
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li class="last-member"><a href="#" class="bg-greylight fw-600 text-grey-500 font-xssss ls-3 text-center">+2</a></li>
+                                <li class="student-apply"><a href="#" class="fw-500 text-grey-500 font-xssss">Student apply</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="card course-card w300 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1 mb-4">
+                        <div class="card-image w-100 mb-3">
+                            <a href="default-course-details.html" class="video-bttn position-relative d-block"><img src="https://via.placeholder.com/400x300.png" alt="image" class="w-100"></a>
+                        </div>
+                        <div class="card-body pt-0">
+                            <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-primary d-inline-block text-primary mr-1">Bootstrap</span>
+                            <span class="card-price"><span class="font-xsssss">$</span> 760</span>
+                            <h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><a href="default-course-details.html" class="text-dark text-grey-900">Automate the Boring Stuff with Python Programming</a></h4>
+                            <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2"> 14 Lesson </h6>
+                            <ul class="memberlist mt-3 mb-2 ml-0 d-block">
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li class="last-member"><a href="#" class="bg-greylight fw-600 text-grey-500 font-xssss ls-3 text-center">+2</a></li>
+                                <li class="student-apply"><a href="#" class="fw-500 text-grey-500 font-xssss">Student apply</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="card course-card w300 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1 mb-4">
+                        <div class="card-image w-100 mb-3">
+                            <a href="default-course-details.html" class="video-bttn position-relative d-block"><img src="https://via.placeholder.com/400x300.png" alt="image" class="w-100"></a>
+                        </div>
+                        <div class="card-body pt-0">
+                            <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-danger d-inline-block text-danger mr-1">Develop</span>
+                            <span class="card-price"><span class="font-xsssss">$</span> 370</span>
+                            <h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><a href="default-course-details.html" class="text-dark text-grey-900">The Data Science Course Complete Data Science </a></h4>
+                            <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2"> 23 Lesson </h6>
+                            <ul class="memberlist mt-3 mb-2 ml-0 d-block">
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li class="last-member"><a href="#" class="bg-greylight fw-600 text-grey-500 font-xssss ls-3 text-center">+2</a></li>
+                                <li class="student-apply"><a href="#" class="fw-500 text-grey-500 font-xssss">Student apply</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="card course-card w300 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1 mb-4">
+                        <div class="card-image w-100 mb-3">
+                            <a href="default-course-details.html" class="video-bttn position-relative d-block"><img src="https://via.placeholder.com/400x300.png" alt="image" class="w-100"></a>
+                        </div>
+                        <div class="card-body pt-0">
+                            <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-danger d-inline-block text-danger mr-1">Develop</span>
+                            <span class="card-price"><span class="font-xsssss">$</span> 370</span>
+                            <h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><a href="default-course-details.html" class="text-dark text-grey-900">The Data Science Course Complete Data Science </a></h4>
+                            <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2"> 23 Lesson </h6>
+                            <ul class="memberlist mt-3 mb-2 ml-0 d-block">
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
+                                <li class="last-member"><a href="#" class="bg-greylight fw-600 text-grey-500 font-xssss ls-3 text-center">+2</a></li>
+                                <li class="student-apply"><a href="#" class="fw-500 text-grey-500 font-xssss">Student apply</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12 pt-0 mb-3">
+            <h2 class="section-title">Live <b> Classes</b> <a href="#"><i class="feather-edit text-grey-500 font-xs"></i></a></h2>
+        </div>
+
+        <div class="col-lg-12 pt-2">
+            <div class="owl-carousel category-card owl-theme overflow-hidden overflow-visible-xl nav-none">
+                <div class="item">
+                    <div class="card w200 d-block border-0 shadow-xss rounded-lg overflow-hidden mb-4">
+                        <div class="card-body position-relative h100 bg-gradiant-bottom bg-image-cover bg-image-center" style="background-image: url(https://via.placeholder.com/200x100.png);"></div>
+                        <div class="card-body d-block w-100 pl-4 pr-4 pb-4 text-center">
+                            <figure class="avatar ml-auto mr-auto mb-0 mt--6 position-relative w75 z-index-1"><img src="https://via.placeholder.com/50x50.png" alt="image" class="float-right p-1 bg-white rounded-circle w-100"></figure>
+                            <div class="clearfix"></div>
+                            <h4 class="fw-700 font-xsss mt-3 mb-1">Aliqa Macale </h4>
+                            <p class="fw-500 font-xsssss text-grey-500 mt-0 mb-2">support@gmail.com</p>
+                            <span class="live-tag mt-2 mb-3 bg-danger p-2 z-index-1 rounded-lg text-white font-xsssss text-uppersace fw-700 ls-3">LIVE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="card w200 d-block border-0 shadow-xss rounded-lg overflow-hidden mb-4">
+                        <div class="card-body position-relative h100 bg-gradiant-bottom bg-image-cover bg-image-center" style="background-image: url(https://via.placeholder.com/200x100.png);"></div>
+                        <div class="card-body d-block w-100 pl-4 pr-4 pb-4 text-center">
+                            <figure class="avatar ml-auto mr-auto mb-0 mt--6 position-relative w75 z-index-1"><img src="https://via.placeholder.com/50x50.png" alt="image" class="float-right p-1 bg-white rounded-circle w-100"></figure>
+                            <div class="clearfix"></div>
+                            <h4 class="fw-700 font-xsss mt-3 mb-1">Aliqa Macale </h4>
+                            <p class="fw-500 font-xsssss text-grey-500 mt-0 mb-2">support@gmail.com</p>
+                            <span class="live-tag mt-2 mb-3 bg-danger p-2 z-index-1 rounded-lg text-white font-xsssss text-uppersace fw-700 ls-3">LIVE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="card w200 d-block border-0 shadow-xss rounded-lg overflow-hidden mb-4">
+                        <div class="card-body position-relative h100 bg-gradiant-bottom bg-image-cover bg-image-center" style="background-image: url(https://via.placeholder.com/200x100.png);"></div>
+                        <div class="card-body d-block w-100 pl-4 pr-4 pb-4 text-center">
+                            <figure class="avatar ml-auto mr-auto mb-0 mt--6 position-relative w75 z-index-1"><img src="https://via.placeholder.com/50x50.png" alt="image" class="float-right p-1 bg-white rounded-circle w-100"></figure>
+                            <div class="clearfix"></div>
+                            <h4 class="fw-700 font-xsss mt-3 mb-1">John Steere </h4>
+                            <p class="fw-500 font-xsssss text-grey-500 mt-0 mb-2">support@gmail.com</p>
+                            <span class="live-tag mt-2 mb-3 bg-danger p-2 z-index-1 rounded-lg text-white font-xsssss text-uppersace fw-700 ls-3">LIVE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="card w200 d-block border-0 shadow-xss rounded-lg overflow-hidden mb-4">
+                        <div class="card-body position-relative h100 bg-gradiant-bottom bg-image-cover bg-image-center" style="background-image: url(https://via.placeholder.com/200x100.png);"></div>
+                        <div class="card-body d-block w-100 pl-4 pr-4 pb-4 text-center">
+                            <figure class="avatar ml-auto mr-auto mb-0 mt--6 position-relative w75 z-index-1"><img src="https://via.placeholder.com/50x50.png" alt="image" class="float-right p-1 bg-white rounded-circle w-100"></figure>
+                            <div class="clearfix"></div>
+                            <h4 class="fw-700 font-xsss mt-3 mb-1">Mohannad Zitoun </h4>
+                            <p class="fw-500 font-xsssss text-grey-500 mt-0 mb-2">support@gmail.com</p>
+                            <span class="live-tag mt-2 mb-3 bg-danger p-2 z-index-1 rounded-lg text-white font-xsssss text-uppersace fw-700 ls-3">LIVE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="card w200 d-block border-0 shadow-xss rounded-lg overflow-hidden mb-4">
+                        <div class="card-body position-relative h100 bg-gradiant-bottom bg-image-cover bg-image-center" style="background-image: url(https://via.placeholder.com/200x100.png);"></div>
+                        <div class="card-body d-block w-100 pl-4 pr-4 pb-4 text-center">
+                            <figure class="avatar ml-auto mr-auto mb-0 mt--6 position-relative w75 z-index-1"><img src="https://via.placeholder.com/50x50.png" alt="image" class="float-right p-1 bg-white rounded-circle w-100"></figure>
+                            <div class="clearfix"></div>
+                            <h4 class="fw-700 font-xsss mt-3 mb-1">Aliqa Macale </h4>
+                            <p class="fw-500 font-xsssss text-grey-500 mt-0 mb-2">support@gmail.com</p>
+                            <span class="live-tag mt-2 mb-3 bg-danger p-2 z-index-1 rounded-lg text-white font-xsssss text-uppersace fw-700 ls-3">LIVE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="card w200 d-block border-0 shadow-xss rounded-lg overflow-hidden mb-4">
+                        <div class="card-body position-relative h100 bg-gradiant-bottom bg-image-cover bg-image-center" style="background-image: url(https://via.placeholder.com/200x100.png);"></div>
+                        <div class="card-body d-block w-100 pl-4 pr-4 pb-4 text-center">
+                            <figure class="avatar ml-auto mr-auto mb-0 mt--6 position-relative w75 z-index-1"><img src="https://via.placeholder.com/50x50.png" alt="image" class="float-right p-1 bg-white rounded-circle w-100"></figure>
+                            <div class="clearfix"></div>
+                            <h4 class="fw-700 font-xsss mt-3 mb-1">Hendrix Stamp </h4>
+                            <p class="fw-500 font-xsssss text-grey-500 mt-0 mb-2">support@gmail.com</p>
+                            <span class="live-tag mt-2 mb-3 bg-danger p-2 z-index-1 rounded-lg text-white font-xsssss text-uppersace fw-700 ls-3">LIVE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="card w200 d-block border-0 shadow-xss rounded-lg overflow-hidden mb-4">
+                        <div class="card-body position-relative h100 bg-gradiant-bottom bg-image-cover bg-image-center" style="background-image: url(https://via.placeholder.com/200x100.png);"></div>
+                        <div class="card-body d-block w-100 pl-4 pr-4 pb-4 text-center">
+                            <figure class="avatar ml-auto mr-auto mb-0 mt--6 position-relative w75 z-index-1"><img src="https://via.placeholder.com/50x50.png" alt="image" class="float-right p-1 bg-white rounded-circle w-100"></figure>
+                            <div class="clearfix"></div>
+                            <h4 class="fw-700 font-xsss mt-3 mb-1">Mohannad Zitoun </h4>
+                            <p class="fw-500 font-xsssss text-grey-500 mt-0 mb-2">support@gmail.com</p>
+                            <span class="live-tag mt-2 mb-3 bg-danger p-2 z-index-1 rounded-lg text-white font-xsssss text-uppersace fw-700 ls-3">LIVE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

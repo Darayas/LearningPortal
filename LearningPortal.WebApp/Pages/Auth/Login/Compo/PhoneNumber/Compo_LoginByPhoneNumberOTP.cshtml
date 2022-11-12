@@ -1,0 +1,45 @@
+﻿@page "/{culture}/Login/Compo/LoginByPhoneNumberOTP"
+@model LearningPortal.WebApp.Pages.Auth.Login.Compo.PhoneNumber.Compo_LoginByPhoneNumberOTPModel
+
+<h1>کد تایید</h1>
+<form id="FrmOTPLogin">
+    <input asp-for="Input.PhoneNumber" type="hidden" />
+    <div class="form-group">
+        <i class="ti-mobile"></i>
+        <input autocomplete="off" asp-for="Input.OTPCode" class="form-control" placeholder="@Html.DisplayNameFor(a => a.Input.OTPCode)">
+    </div>
+    <div class="form-check mb-3">
+        <a href="#" onclick="Resend()" class="fw-600 font-xsss text-grey-700 mt-1 ResendBtn">ارسال مجدد</a>
+        <label class="form-check-label font-xsss text-grey-500 Timer" data-minutes-left="2.01"></label>
+    </div>
+</form>
+
+<div class="btns col-sm-12 p-0">
+    <div class="form-group mb-1">
+        <button type="button" onclick="SendForm('/@ViewData["Culture"]/Login/Compo/LoginByPhoneNumberOTP','FrmOTPLogin')" class="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 ">تایید کد</button>
+    </div>
+</div>
+
+<script src="~/lib/countdown-timer-controls/jquery-countdown-timer-control.min.js"></script>
+<script>
+    function Resend() {
+        SendData('/@ViewData["culture"]/Login/Compo/LoginByPhoneNumberOTP?handler=Resend', { PhoneNumber : '@Model.Input.PhoneNumber'});
+    }
+
+    function StartTimer() {
+        $('.Timer').html('');
+        $('.Timer').show();
+        $('.ResendBtn').hide();
+
+        var Timer = $('.Timer').startTimer({
+            onComplete: function (element) {
+                $('.Timer').hide();
+                $('.ResendBtn').show();
+            }
+        }).trigger('start');
+    }
+
+    $(document).ready(function () {
+        StartTimer();
+    });
+</script>

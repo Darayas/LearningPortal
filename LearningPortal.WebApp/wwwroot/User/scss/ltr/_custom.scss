@@ -1,0 +1,52 @@
+﻿.right-menu-icon {
+    margin-left: auto;
+
+    li {
+        margin-right: 0px !important;
+        margin-left: 25px;
+    }
+}
+
+.main-content {
+    .middle-sidebar-header {
+        .right-menu-icon {
+            li {
+                a {
+                    .menu-dropdown {
+                        right: -5px;
+                        text-align: left;
+                    }
+
+                    .menuItem {
+                        padding-left: 3rem;
+                        width: 100% !important;
+                        border: 0 !important;
+                        margin-bottom: 1rem;
+
+                        img {
+                            position: absolute !important;
+                            border-radius: 50%;
+                            left: 0 !important;
+                            width: 40px;
+                        }
+
+                        h5 {
+
+                            span {
+                                float: right;
+                                font-weight: 600;
+                                color: #ced4da !important;
+                                margin-top: 0.25rem;
+                                font-size: 10px !important;
+                            }
+                        }
+                    }
+
+                    &:after {
+                        right: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

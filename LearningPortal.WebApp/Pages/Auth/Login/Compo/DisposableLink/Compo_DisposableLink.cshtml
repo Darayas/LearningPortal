@@ -1,0 +1,25 @@
+﻿@page "/{culture}/Login/Compo/DisposableLink"
+@model LearningPortal.WebApp.Pages.Auth.Login.Compo.DisposableLink.Compo_DisposableLinkModel
+
+<h1>ورود با لینک یکبار مصرف</h1>
+<form id="FrmDisposableLink">
+
+    <div class="form-group mb-3">
+        <i class="ti-mobile"></i>
+        <input asp-for="Input.Email" class="form-control" placeholder="@Html.DisplayNameFor(fn => fn.Input.Email)">
+    </div>
+</form>
+
+<div class="btns col-sm-12 p-0">
+    <div class="form-group mb-1">
+        <button type="button" onclick="SendForm('/@ViewData["Culture"]/Login/Compo/DisposableLink','FrmDisposableLink')" class="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 ">ارسال لینک یکبار مصرف</button>
+    </div>
+    <h6 class="text-grey-500 font-xsss fw-500 mt-0 mb-0 lh-32">ایا حساب کاربری ندارید؟ <a href="/@ViewData["Culture"]/Register" class="fw-700">ایجاد حساب</a></h6>
+</div>
+
+<div class="col-sm-12 p-0 text-center mt-2">
+
+    <h6 class="mb-0 d-inline-block bg-white fw-500 font-xsss text-grey-500 mb-3">یا از طریق شبکه های اجتماعی وارد شوید </h6>
+    <div class="form-group mb-1 social"><a href="#" class="form-control style2-input text-white fw-600 bg-facebook border-0 p-0 mb-2"><img src="https://via.placeholder.com/50x50.png" alt="icon" class="w40 mb-1"> ورود به وسیله گوگل</a></div>
+    <div class="form-group mb-1 social"><a href="#" class="form-control style2-input text-white fw-600 bg-twiiter border-0 p-0 "><img src="https://via.placeholder.com/50x50.png" alt="icon" class=" w40 mb-1 "> ورود به وسیله فیس بوک</a></div>
+</div>

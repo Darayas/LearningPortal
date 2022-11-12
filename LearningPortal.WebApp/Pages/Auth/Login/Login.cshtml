@@ -1,0 +1,47 @@
+﻿@page "/{culture}/Login"
+@model LoginModel
+@{
+    Layout="~/Pages/Shared/_AuthLayout.cshtml";
+}
+
+<div class="card shadow-none border-0 ml-auto mr-auto login-card">
+    <div class="card-body rounded-0 text-left">
+       
+
+        <LoadComponent id="CompoLoginByPhoneNumber"
+                       url="/@ViewData["Culture"]/Login/Compo/LoginByPhoneNumber"
+                       data='new {}'
+                       http-context="HttpContext"></LoadComponent>
+    </div>
+</div>
+@Html.AntiForgeryToken()
+<script>
+    function GotoReturnUrl() {
+        location.href = '@ViewData["ReturnUrl"]';
+    }
+
+    function LoadOtpCompo(_PhoneNumber) {
+        LoadComponent('/@CultureInfo.CurrentCulture.Parent.Name/Login/Compo/LoginByPhoneNumberOTP', {
+            PhoneNumber: _PhoneNumber
+        }, function (res) { 
+            $('#CompoLoginByPhoneNumber').html(res);
+        });
+    }
+
+    function LoadRecovery()
+    {
+        LoadComponent('/@CultureInfo.CurrentCulture.Parent.Name/Login/Compo/RecoveryEmailPass', {
+
+        }, function (res) {
+            $('#CompoLoginByPhoneNumber').html(res);
+        });
+    }
+
+    function LoadEmailCompo() {
+        LoadComponent('/@CultureInfo.CurrentCulture.Parent.Name/Login/Compo/LoginByEmailPass', {
+
+        }, function (res) {
+            $('#CompoLoginByPhoneNumber').html(res);
+        });
+    }
+</script>

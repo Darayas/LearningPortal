@@ -1,0 +1,42 @@
+﻿                #region برسی تکراری نبودن نام فایل در دیتابیس
+                {
+                    var IsDuplicate = await CheckFileNameIsDuplicateAsync(Input.FileServerId, Input.FilePathId, Input.FileName);
+                    if (IsDuplicate)
+                        return new OperationResult().Failed("FileNameIsDuplicated");
+                }
+                #endregion
+
+                #region واکشی مسیر پوشه
+                string _Path;
+                {
+                    _Path = await _FilePathApplication.GetDirectoryPathByPathIdAsync(new InpGetDirectoryPathByPathId { FilePathId=Input.FilePathId });
+                    if (_Path == null)
+                        return new OperationResult().Failed("PathIdIsInvalid");
+
+                }
+                #endregion
+
+                #region واکشی اطلاعات سرور
+                OutGetServerDetails qServer;
+                {
+                    var _Result = await _FileServerApplication.GetServerDetailsAsync(new InpGetServerDetails { ServerId=Input.FileServerId });
+                    if (_Result == null)
+                        return new OperationResult().Failed(_Result.Message);
+
+                    qServer= _Result.Data;
+                }
+                #endregion
+
+                #region Connect to ftp
+                {
+                    _FtpWorker.Connect(qServer.FtpHost, qServer.FtpPort, qServer.FtpUserName, qServer.FtpPassword);
+                }
+                #endregion
+
+                #region برسی وجود فایل در FTP
+                {
+                    var _Result = CheckExistFileInFtp(qServer.FtpPath, _Path, Input.FileName);
+                    if (_Result==true)
+                        return new OperationResult().Failed("FileName is duplicated");
+                }
+                #endregion

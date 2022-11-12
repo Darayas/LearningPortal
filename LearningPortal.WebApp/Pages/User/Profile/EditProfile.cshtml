@@ -1,0 +1,79 @@
+﻿@page "/{culture}/User/EditProfile"
+@model LearningPortal.WebApp.Pages.User.Profile.EditProfileModel
+@{
+    Layout = "~/Pages/Shared/_UserLayout.cshtml";
+}
+
+<div class="middle-sidebar-bottom bg-lightblue theme-dark-bg">
+    <div class="middle-sidebar-left">
+        <div class="middle-wrap">
+            <div class="card w-100 border-0 bg-white shadow-xs p-0 mb-4">
+                <div class="card-body p-4 w-100 bg-current border-0 d-flex rounded-lg">
+                    <a href="/@ViewData["Culture"]/User/Index" class="d-inline-block mt-2"><i class="ti-arrow-right font-sm text-white"></i></a>
+                    <h4 class="font-xs text-white fw-600 mr-4 mb-0 mt-2">ویرایش پروفایل</h4>
+                </div>
+                <div class="card-body p-lg-5 p-4 w-100 border-0 ">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 text-center">
+                            <figure class="avatar ml-auto mr-auto mb-0 mt-2 w100"><img src="@Model.Input.ImgUrl" class="shadow-sm rounded-lg w-100"></figure>
+                            <h2 class="fw-700 font-sm text-grey-900 mt-3">
+                                @User.GetUserDetails().FullName
+                            </h2>
+                            <h4 class="text-grey-500 fw-500 mb-3 font-xsss mb-4">@User.GetUserDetails().AccessLevelTitle</h4>
+                            <!-- <a href="#" class="p-3 alert-primary text-primary font-xsss fw-500 mt-2 rounded-lg">Upload New Photo</a> -->
+                        </div>
+                    </div>
+
+                    <form id="frmEditProfile">
+                        <div class="row">
+                            <div class="col-lg-7 mb-3">
+                                <div class="form-group">
+                                    <label asp-for="Input.FullName" class=" fw-600 font-xsss"></label>
+                                    <input class="form-control" asp-for="Input.FullName">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-7 mb-3">
+                                <div class="form-group">
+                                    <label asp-for="Input.Email" class=" fw-600 font-xsss"></label>
+                                    <input asp-for="Input.Email" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-7 mb-3">
+                                <div class="form-group">
+                                    @*<label asp-for="Input.PhoneNumber" class=" fw-600 font-xsss"></label>
+                                    <input asp-for="Input.PhoneNumber" class="form-control">*@
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12 mb-3">
+                                <div class="form-group">
+                                    <label asp-for="Input.Image" class=" fw-600 font-xsss"></label>
+                                    <input asp-for="Input.Image" style="height:70px;" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 mb-3">
+                                <label asp-for="Input.Bio" class=" fw-600 font-xsss"></label>
+                                <textarea asp-for="Input.Bio" class="form-control mb-0 p-3 h100 bg-greylight lh-16" rows="5" spellcheck="false"></textarea>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <a href="#" onclick="SendForm('/@ViewData["Culture"]/User/EditProfile','frmEditProfile')" class="bg-current text-center text-white font-xsss fw-600 p-3 w175 rounded-lg d-inline-block">ذخیره</a>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <!-- <div class="card w-100 border-0 p-2"></div> -->
+        </div>
+    </div>
+</div>

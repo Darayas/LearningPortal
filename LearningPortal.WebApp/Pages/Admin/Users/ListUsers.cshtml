@@ -1,0 +1,22 @@
+﻿@page "/{culture}/Admin/ListUsers"
+@model LearningPortal.WebApp.Pages.Admin.Users.ListUsersModel
+@{
+    Layout = "~/Pages/Shared/_UserLayout.cshtml";
+}
+
+<div class="middle-sidebar-bottom bg-lightblue theme-dark-bg">
+    <div class="middle-sidebar-left">
+        <div class="middle-wrap">
+            <div class="card w-100 border-0 bg-white shadow-xs p-0 mb-4">
+                <div class="card-body p-4 w-100 bg-current border-0 d-flex rounded-lg">
+                    <a href="/@ViewData["Culture"]/User/Index" class="d-inline-block mt-2"><i class="ti-arrow-right font-sm text-white"></i></a>
+                    <h4 class="font-xs text-white fw-600 mr-4 mb-0 mt-2">لیست کاربران</h4>
+                </div>
+                <div class="card-body p-lg-5 p-4 w-100 border-0 ">
+                    Test
+                </div>
+            </div>
+            <!-- <div class="card w-100 border-0 p-2"></div> -->
+        </div>
+    </div>
+</div>

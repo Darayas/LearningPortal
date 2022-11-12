@@ -1,0 +1,298 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Elomoas - @ViewData["Title"]</title>
+
+    <link rel="stylesheet" href="/User/css/themify-icons.css">
+    <link rel="stylesheet" href="/User/css/feather.css">
+    <link href="~/lib/sweetalert/sweetalert.min.css" rel="stylesheet" />
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/User/images/favicon.png">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="/User/css/style-rtl.min.css">
+
+</head>
+
+<body class="color-theme-blue">
+    @Html.AntiForgeryToken()
+    <div class="preloader"></div>
+
+    <div class="main-wrapper">
+
+        <!-- navigation -->
+        <nav class="navigation scroll-bar">
+            <div class="container pl-0 pr-0">
+                <div class="nav-content">
+                    <div class="nav-top">
+                        <a href="index.html"><i class="feather-slack text-success display1-size mr-3 ml-3"></i><span class="d-inline-block fredoka-font ls-3 fw-600 text-current font-xl logo-text mb-0">Elomoas. </span> </a>
+                        <a href="#" class="close-nav d-inline-block d-lg-none"><i class="ti-close bg-grey mb-4 btn-round-sm font-xssss fw-700 text-dark ml-auto mr-2 "></i></a>
+                    </div>
+                    <div class="nav-caption fw-600 font-xssss text-grey-500"><span>New </span>Feeds</div>
+                    <ul class="mb-3">
+                        <li class="logo d-none d-xl-block d-lg-block"></li>
+                        <li><a href="default.html" class="active nav-content-bttn open-font" data-tab="chats"><i class="feather-tv mr-3"></i><span>Course Feed</span></a></li>
+                        <li><a href="default-follower.html" class="nav-content-bttn open-font" data-tab="friends"><i class="feather-shopping-bag mr-3"></i><span>Followers</span></a></li>
+                        <li><a href="default-channel.html" class="nav-content-bttn open-font" data-tab="favorites"><i class="feather-globe mr-3"></i><span>Explore Channel</span></a></li>
+                        <li><a href="default-live-stream.html" class="nav-content-bttn open-font" data-tab="favorites"><i class="feather-play-circle mr-3"></i><span>Live Stream</span></a></li>
+                        <li class="flex-lg-brackets"><a href="default-user-profile.html" data-tab="archived" class="nav-content-bttn open-font"><i class="feather-video mr-3"></i><span>Saved Course</span></a></li>
+                    </ul>
+
+                    <div class="nav-caption fw-600 font-xssss text-grey-500"><span>Following </span>Author</div>
+                    <ul class="mb-3">
+                        <li><a href="default-author-profile.html" class="nav-content-bttn open-font pl-2 pb-2 pt-1 h-auto" data-tab="chats"><img src="https://via.placeholder.com/50x50.png" alt="user" class="w40 mr-2 rounded-circle"><span>Surfiya Zakir </span> <span class="circle-icon bg-success mt-3"></span></a></li>
+                        <li><a href="default-author-profile.html" class="nav-content-bttn open-font pl-2 pb-2 pt-1 h-auto" data-tab="chats"><img src="https://via.placeholder.com/50x50.png" alt="user" class="w40 mr-2 rounded-circle"><span>Vincent Parks </span> <span class="circle-icon bg-warning mt-3"></span></a></li>
+                        <li><a href="default-author-profile.html" class="nav-content-bttn open-font pl-2 pb-2 pt-1 h-auto" data-tab="chats"><img src="https://via.placeholder.com/50x50.png" alt="user" class="w40 mr-2 rounded-circle"><span>Richard Bowers </span> <span class="circle-icon bg-success mt-3"></span></a></li>
+                        <li><a href="default-author-profile.html" class="nav-content-bttn open-font pl-2 pb-2 pt-1 h-auto" data-tab="chats"><img src="https://via.placeholder.com/50x50.png" alt="user" class="w40 mr-2 rounded-circle"><span>John Lambert </span> <span class="circle-icon bg-success mt-3"></span></a></li>
+                    </ul>
+                    <div class="nav-caption fw-600 font-xssss text-grey-500"><span></span> Account</div>
+                    <ul class="mb-3">
+                        <li class="logo d-none d-xl-block d-lg-block"></li>
+                        <li><a href="default-settings.html" class="nav-content-bttn open-font h-auto pt-2 pb-2"><i class="font-sm feather-settings mr-3 text-grey-500"></i><span>Settings</span></a></li>
+                        <li><a href="default-analytics.html" class="nav-content-bttn open-font h-auto pt-2 pb-2"><i class="font-sm feather-pie-chart mr-3 text-grey-500"></i><span>Analytics</span></a></li>
+                        <li><a href="message.html" class="nav-content-bttn open-font h-auto pt-2 pb-2"><i class="font-sm feather-message-square mr-3 text-grey-500"></i><span>Chat</span><span class="circle-count bg-warning mt-0">23</span></a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- navigation -->
+        <!-- main content -->
+        <div class="main-content">
+
+            <div class="middle-sidebar-header bg-white">
+                <button class="header-menu"></button>
+                <form action="#" class="float-left header-search">
+                    <div class="form-group mb-0 icon-input">
+                        <i class="feather-search font-lg text-grey-400"></i>
+                        <input type="text" placeholder="Start typing to search.." class="bg-transparent border-0 lh-32 pt-2 pb-2 pl-5 pr-3 font-xsss fw-500 rounded-xl w350">
+                    </div>
+                </form>
+                <ul class="d-flex right-menu-icon">
+                    <li>
+                        <partial name="~/Pages/Shared/Partials/P_ChangeLanguage.cshtml" />
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="dot-count bg-warning"></span><i class="feather-bell font-xl text-current"></i>
+                            <div class="menu-dropdown">
+                                <h4 class="fw-700 font-xs mb-4">Notification</h4>
+                                <div class="card bg-transparent-card menuItem">
+                                    <img src="https://via.placeholder.com/50x50.png" alt="user">
+                                    <h5 class="font-xsss text-grey-900 mb-1 mt-0 fw-700 d-block">
+                                        Hendrix Stamp
+                                        <span> 3 min</span>
+                                    </h5>
+                                    <h6 class="text-grey-500 fw-500 font-xssss lh-4">There are many variations of pass..</h6>
+                                </div>
+                                <div class="card bg-transparent-card menuItem">
+                                    <img src="https://via.placeholder.com/50x50.png" alt="user" class="w40 position-absolute left-0 rounded-circle">
+                                    <h5 class="font-xsss text-grey-900 mb-1 mt-0 fw-700 d-block">
+                                        Goria Coast
+                                        <span> 2 min</span>
+                                    </h5>
+                                    <h6 class="text-grey-500 fw-500 font-xssss lh-4">Mobile Apps UI Designer is require..</h6>
+                                </div>
+
+                                <div class="card bg-transparent-card menuItem">
+                                    <img src="https://via.placeholder.com/50x50.png" alt="user" class="w40 position-absolute left-0 rounded-circle">
+                                    <h5 class="font-xsss text-grey-900 mb-1 mt-0 fw-700 d-block">
+                                        Surfiya Zakir
+                                        <span> 1 min</span>
+                                    </h5>
+                                    <h6 class="text-grey-500 fw-500 font-xssss lh-4">Mobile Apps UI Designer is require..</h6>
+                                </div>
+                                <div class="card bg-transparent-card menuItem">
+                                    <img src="https://via.placeholder.com/50x50.png" alt="user" class="w40 position-absolute left-0 rounded-circle">
+                                    <h5 class="font-xsss text-grey-900 mb-1 mt-0 fw-700 d-block">
+                                        Victor Exrixon
+                                        <span> 30 sec</span>
+                                    </h5>
+                                    <h6 class="text-grey-500 fw-500 font-xssss lh-4">Mobile Apps UI Designer is require..</h6>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li><a href="message.html"><i class="feather-message-square font-xl text-current"></i></a></li>
+                    <li><a href="default-user-profile.html"><img src="https://via.placeholder.com/50x50.png" alt="user" class="w40 rounded-circle mt--1"></a></li>
+                    <li><a href="#" class="menu-search-icon"><i class="feather-search text-grey-900 font-lg"></i></a></li>
+                </ul>
+            </div>
+            <div class="middle-sidebar-bottom">
+                @RenderBody()
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="middle-sidebar-right scroll-bar">
+
+                        <div class="middle-sidebar-right-content">
+
+                            <div class="card theme-light-bg overflow-hidden rounded-xxl border-0 mb-3">
+                                <div class="card-body d-flex justify-content-between align-items-end p-4">
+                                    <div>
+                                        <h4 class="font-xsss text-grey-900 mb-2 d-flex align-items-center justify-content-between mt-2 fw-700">
+                                            حالت تیره
+                                        </h4>
+                                    </div>
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input dark-mode-switch" id="darkmodeswitch">
+                                        <label class="custom-control-label bg-success" for="darkmodeswitch"></label>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="card overflow-hidden subscribe-widget p-3 mb-3 rounded-xxl border-0">
+                                <div class="card-body p-2 d-block text-center bg-no-repeat bg-image-topcenter" style="background-image: url(images/user-pattern.png);">
+                                    <a href="/@ViewData["culture"]/User/EditProfile" class="position-absolute right-0 mr-4"><i class="feather-edit text-grey-500 font-xs"></i></a>
+                                    <figure class="avatar ml-auto mr-auto mb-0 mt-2 w90"><img src="@User.GetUserDetails().ImgUrl" alt="image" class="float-right shadow-sm rounded-circle w-100"></figure>
+                                    <div class="clearfix"></div>
+                                    <h2 class="text-black font-xss lh-3 fw-700 mt-3 mb-1">@User.GetUserDetails().FullName</h2>
+                                    <div class="clearfix"></div>
+
+                                    <div class="col-12 mt-4 text-left">
+                                        <h4 class="text-grey-800 font-xsss fw-700 mb-3 d-block text-right">منوی کاربری </h4>
+                                        <div class="overflow-visible nav-none">
+                                            <ul class="user-menu-item">
+                                                <li><a href="#">داشبورد</a></li>
+                                                <li><a href="/@CultureInfo.CurrentCulture.Parent.Name/Admin/ListUsers">مدیریت کاربران</a></li>
+                                                <li><a href="#">مدیریت سطوح دسترسی</a></li>
+                                                <li><a onclick="Logout()" href="#">خروج</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="card theme-light-bg overflow-hidden rounded-xxl border-0 mb-3">
+                                <div class="card-body d-flex justify-content-between align-items-end pl-4 pr-4 pt-4 pb-3">
+                                    <h4 class="fw-700 font-xsss">My Class</h4>
+                                    <a href="#" class="position-absolute right-0 mr-4"><i class="ti-more-alt text-grey-500 font-xs"></i></a>
+                                </div>
+                                <div class="card-body pl-4 pr-4 pt-0 pb-3 border-0 w-100 d-block">
+                                    <div class="row">
+                                        <div class="col-3 p-0">
+                                            <a href="#" class="btn-round-lg rounded-lg bg-lightblue ml-3">
+                                                <img src="https://via.placeholder.com/50x50.png" alt="icon" class="p-1 w-100">
+                                            </a>
+                                        </div>
+                                        <div class="col-9 pr-3">
+                                            <h4 class="font-xssss d-block fw-700 mt-2">Advanced Python Sass <span class="float-right mt-1 font-xsssss text-grey-500">87%</span></h4>
+                                            <div class="progress mt-2 h5 w-100">
+                                                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="87" style="width: 87%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-body pl-4 pr-4 pt-0 pb-3 border-0 w-100 d-block">
+                                    <div class="row">
+                                        <div class="col-3 p-0">
+                                            <a href="#" class="btn-round-lg rounded-lg bg-lightblue ml-3">
+                                                <img src="https://via.placeholder.com/50x50.png" alt="icon" class="p-1 w-100">
+                                            </a>
+                                        </div>
+                                        <div class="col-9 pr-3">
+                                            <h4 class="font-xssss d-block fw-700 mt-2">Bootstrap SASS CSS <span class="float-right mt-1 font-xsssss text-grey-500">65%</span></h4>
+                                            <div class="progress mt-2 h5 w-100">
+                                                <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="65" style="width: 65%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-body pl-4 pr-4 pt-0 pb-3 border-0 w-100 d-block">
+                                    <div class="row">
+                                        <div class="col-3 p-0">
+                                            <a href="#" class="btn-round-lg rounded-lg bg-lightblue ml-3">
+                                                <img src="https://via.placeholder.com/50x50.png" alt="icon" class="p-1 w-100">
+                                            </a>
+                                        </div>
+                                        <div class="col-9 pr-3">
+                                            <h4 class="font-xssss d-block fw-700 mt-2">Basic JAVA <span class="float-right mt-1 font-xsssss text-grey-500">75%</span></h4>
+                                            <div class="progress mt-2 h5 w-100">
+                                                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="75" style="width: 75%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body pl-4 pr-4 pt-0 pb-3 border-0 w-100 d-block">
+                                    <div class="row">
+                                        <div class="col-3 p-0">
+                                            <a href="#" class="btn-round-lg rounded-lg bg-lightblue ml-3">
+                                                <img src="https://via.placeholder.com/50x50.png" alt="icon" class="p-1 w-100">
+                                            </a>
+                                        </div>
+                                        <div class="col-9 pr-3">
+                                            <h4 class="font-xssss d-block fw-700 mt-2">Advance React <span class="float-right mt-1 font-xsssss text-grey-500">96%</span></h4>
+                                            <div class="progress mt-2 h5 w-100">
+                                                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="96" aria-valuemin="0" aria-valuemax="96" style="width: 96%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-body pl-4 pr-4 pt-0 pb-4 border-0 w-100 d-block">
+                                    <div class="row">
+                                        <div class="col-3 p-0">
+                                            <a href="#" class="btn-round-lg rounded-lg bg-lightblue ml-3">
+                                                <img src="https://via.placeholder.com/50x50.png" alt="icon" class="p-1 w-100">
+                                            </a>
+                                        </div>
+                                        <div class="col-9 pr-3">
+                                            <h4 class="font-xssss d-block fw-700 mt-2">Mongodb Database <span class="float-right mt-1 font-xsssss text-grey-500">73%</span></h4>
+                                            <div class="progress mt-2 h5 w-100">
+                                                <div class="progress-bar bg-info" role="progressbar" aria-valuenow="73" aria-valuemin="0" aria-valuemax="73" style="width: 73%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <button class="btn btn-circle text-white btn-neutral sidebar-right">
+                        <i class="ti-angle-left"></i>
+                    </button>
+                }
+            </div>
+        </div>
+        <!-- main content -->
+        <div class="app-footer border-0 shadow-lg">
+            <a href="default.html" class="nav-content-bttn nav-center"><i class="feather-home"></i></a>
+            <a href="default-follower.html" class="nav-content-bttn"><i class="feather-package"></i></a>
+            <a href="default-live-stream.html" class="nav-content-bttn" data-tab="chats"><i class="feather-layout"></i></a>
+            <a href="#" class="nav-content-bttn sidebar-layer"><i class="feather-layers"></i></a>
+            <a href="default-settings.html" class="nav-content-bttn"><img src="https://via.placeholder.com/50x50.png" alt="user" class="w30 shadow-xss"></a>
+        </div>
+
+        <div class="app-header-search">
+            <form class="search-form">
+                <div class="form-group searchbox mb-0 border-0 p-1">
+                    <input type="text" class="form-control border-0" placeholder="Search...">
+                    <i class="input-icon">
+                        <ion-icon name="search-outline" role="img" class="md hydrated" aria-label="search outline"></ion-icon>
+                    </i>
+                    <a href="#" class="ml-1 mt-1 d-inline-block close searchbox-close">
+                        <i class="ti-close font-xs"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script src="/User/js/plugin.js"></script>
+    <script src="/User/js/apexcharts.min.js"></script>
+    <script src="/User/js/chart.js"></script>
+    <script src="~/lib/sweetalert/sweetalert.js"></script>
+    <script src="/fa/RenderStaticFile/Custom.js"></script>
+    <script src="/shared/js/shared.min.js"></script>
+    <script src="/User/js/scripts.js"></script>
+
+</body>
+
+</html>

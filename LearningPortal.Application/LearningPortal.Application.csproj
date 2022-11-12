@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LearningPortal.Application.Contract\LearningPortal.Application.Contract.csproj" />
+    <ProjectReference Include="..\LearningPortal.Domain\LearningPortal.Domain.csproj" />
+    <ProjectReference Include="..\LearningPortal.Infrastructure.EFCore\LearningPortal.Infrastructure.EFCore.csproj" />
+  </ItemGroup>
+
+</Project>

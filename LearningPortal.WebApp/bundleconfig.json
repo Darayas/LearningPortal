@@ -1,0 +1,20 @@
+[
+  {
+    "outputFileName": "wwwroot/lib/sweetalert/sweetalert.min.css",
+    "inputFiles": [
+      "wwwroot/lib/sweetalert/sweetalert.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/lib/sweetalert/sweetalert.min.js",
+    "inputFiles": [
+      "wwwroot/lib/sweetalert/sweetalert.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/Shared/js/Shared.min.js",
+    "inputFiles": [
+      "wwwroot/Shared/js/Shared.js"
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+﻿@page "/{culture}/Auth/ConfirmEmail"
+@model LearningPortal.WebApp.Pages.Auth.ConfirmEmailModel
+@{
+    ViewData["Title"] = Localizer["ConfirmEmail"];
+    Layout = "~/Pages/Shared/_AuthLayout.cshtml";
+}
+
+<div class="card shadow-none border-0 ml-auto mr-auto login-card">
+    <div class="card-body rounded-0 text-left">
+        <h1>@ViewData["Title"]</h1>
+        <div>
+            <div class="alert alert-@Model.State.Type">
+                @Html.Raw(Model.State.Message)
+            </div>
+        </div>
+    </div>
+</div>

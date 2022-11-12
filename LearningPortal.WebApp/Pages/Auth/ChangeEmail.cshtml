@@ -1,0 +1,17 @@
+﻿@page "/{Culture}/Auth/ChangeEmail"
+@model LearningPortal.WebApp.Pages.Auth.ChangeEmailModel
+@{
+    ViewData["Title"] = Localizer["ChangeEmail"];
+    Layout = "~/Pages/Shared/_AuthLayout.cshtml";
+}
+
+<div class="card shadow-none border-0 ml-auto mr-auto login-card">
+    <div class="card-body rounded-0 text-left">
+        <h1>@ViewData["Title"]</h1>
+        <div>
+            <div class="alert alert-@Model.State.Type">
+                @Html.Raw(Model.State.Message)
+            </div>
+        </div>
+    </div>
+</div>

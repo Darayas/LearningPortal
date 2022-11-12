@@ -1,0 +1,42 @@
+﻿@page "/{culture}/Register"
+@model LearningPortal.WebApp.Pages.Auth.RegisterModel
+@{
+    ViewData["Title"]=Localizer["Register"];
+    Layout = "~/Pages/Shared/_AuthLayout.cshtml";
+}
+
+<div class="card shadow-none border-0 ml-auto mr-auto login-card">
+    <div class="card-body rounded-0 text-left">
+        <h1>ایجاد حساب</h1>
+        <form id="frmRegister">
+            <div class="form-group icon-input mb-3">
+                <i class="font-sm ti-user text-grey-500"></i>
+                @*<label asp-for="Input.FullName"></label>*@
+                <input asp-for="Input.FullName" class="style2-input form-control text-grey-900 font-xsss fw-600" placeholder="@Html.DisplayNameFor(fn => fn.Input.FullName)">
+            </div>
+            <div class="form-group icon-input mb-3">
+                <i class="font-sm ti-email text-grey-500 "></i>
+                <input asp-for="Input.Email" type="text" class="style2-input form-control text-grey-900 font-xsss fw-600" placeholder="@Html.DisplayNameFor(e => e.Input.Email)">
+            </div>
+            <div class="form-group icon-input mb-3">
+                <input asp-for="Input.Password" type="Password" class="style2-input  form-control text-grey-900 font-xss ls-3" placeholder="@Html.DisplayNameFor(p => p.Input.Password)">
+                <i class="font-sm ti-lock text-grey-500 "></i>
+            </div>
+            <div class="form-group icon-input mb-1">
+                <input asp-for="Input.ReTypePassword" type="Password" class="style2-input  form-control text-grey-900 font-xss ls-3" placeholder="@Html.DisplayNameFor(rp => rp.Input.ReTypePassword)">
+                <i class="font-sm ti-lock text-grey-500 "></i>
+            </div>
+            <div class="form-check mb-3">
+                <input asp-for="Input.AcceptRules" type="checkbox" class="form-check-input mt-2">
+                <label asp-for="Input.AcceptRules" class="form-check-label font-xsss text-grey-500"></label>
+            </div>
+        </form>
+        <div class="btns col-sm-12 p-0">
+            <div class="form-group mb-1">
+                <button onclick="SendForm('/@ViewData["Culture"]/register','frmRegister')" class="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 ">@Localizer["Register"]</button>
+            </div>
+            <h6 class="text-grey-500 font-xsss fw-500 mt-0 mb-0 lh-32">ایا حساب کاربری دارید؟ <a href="register.html" class="fw-700">ورود به سایت</a></h6>
+        </div>
+    </div>
+</div>
+@Html.AntiForgeryToken()
