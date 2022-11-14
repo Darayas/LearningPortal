@@ -120,6 +120,9 @@
   <data name="Access Denied" xml:space="preserve">
     <value>دسترسی غیر مجاز</value>
   </data>
+  <data name="AccessLevelTitle" xml:space="preserve">
+    <value>سطح دسترسی</value>
+  </data>
   <data name="Bio" xml:space="preserve">
     <value>مختصری درباره خودتان</value>
   </data>
@@ -168,11 +171,17 @@
   <data name="FileSizeMsg" xml:space="preserve">
     <value>{0} باید بین {1} تا {2} کیلوبایت باشد.</value>
   </data>
+  <data name="First" xml:space="preserve">
+    <value>اولین</value>
+  </data>
   <data name="ForgotPassword" xml:space="preserve">
     <value>فراموشی کلمه عبور</value>
   </data>
   <data name="FullName" xml:space="preserve">
     <value>نام کامل</value>
+  </data>
+  <data name="GridIsEmpty" xml:space="preserve">
+    <value>رکوردی به جهت نمایش وجود ندارد</value>
   </data>
   <data name="GUIDMsg" xml:space="preserve">
     <value>{0} باید Guid باشد.</value>
@@ -192,14 +201,32 @@
   <data name="InvalidUserName" xml:space="preserve">
     <value>نام کاربری '{userName}' نامعتبر است، فقط می تواند حاوی حروف و یا اعداد باشد</value>
   </data>
+  <data name="IsActive" xml:space="preserve">
+    <value>فعال</value>
+  </data>
+  <data name="ItemsPerPage" xml:space="preserve">
+    <value>مورد بر صفحه</value>
+  </data>
+  <data name="KendoOf" xml:space="preserve">
+    <value>از {0}</value>
+  </data>
   <data name="Languages" xml:space="preserve">
     <value>زبانها</value>
+  </data>
+  <data name="Last" xml:space="preserve">
+    <value>اخرین</value>
   </data>
   <data name="LoginAlreadyAssociated" xml:space="preserve">
     <value>این کاربر قبلأ اضافه شده‌است</value>
   </data>
   <data name="MaxLengthStringMsg" xml:space="preserve">
     <value>تعداد کاراکترهای {0} بیش از حد مجاز({1}) کاراکتر میباشد.</value>
+  </data>
+  <data name="MorePages" xml:space="preserve">
+    <value>صفحات بیشتر</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>بعدی</value>
   </data>
   <data name="Ok" xml:space="preserve">
     <value>باشه</value>
@@ -221,6 +248,12 @@
   </data>
   <data name="OtpIsExpired.PleaseUseResendBtn" xml:space="preserve">
     <value>رمز یکبار مصرف، منقضی شده است. لطفا مجدد اقدام نمایید</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>صفحه</value>
+  </data>
+  <data name="PageableMsg" xml:space="preserve">
+    <value>{0} تا {1} از {2} مورد</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>کلمه عبور</value>
@@ -258,7 +291,13 @@
   <data name="PleaseWait2MinToResendSms" xml:space="preserve">
     <value>برای ارسال مجدد کد تایید، لطفا 2 دقیقه صبر نمایید.</value>
   </data>
+  <data name="Previous" xml:space="preserve">
+    <value>قبلی</value>
+  </data>
   <data name="ProfileImage" xml:space="preserve">
+    <value>تصویر پروفایل</value>
+  </data>
+  <data name="ProfileImgUrl" xml:space="preserve">
     <value>تصویر پروفایل</value>
   </data>
   <data name="RangeNumMsg" xml:space="preserve">
@@ -270,8 +309,14 @@
   <data name="RecoveryEmailWasSent" xml:space="preserve">
     <value>ایمیل بازیابی حساب با موفقیت ارسال شد. لطفا روی لینک موجود کلیک نمایید</value>
   </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>تازه کردن</value>
+  </data>
   <data name="Register" xml:space="preserve">
     <value>ثبت نام</value>
+  </data>
+  <data name="RegisterDate" xml:space="preserve">
+    <value>تاریخ ثبت نام</value>
   </data>
   <data name="RequiredFileMsg" xml:space="preserve">
     <value>{0} را وارد نمایید.</value>

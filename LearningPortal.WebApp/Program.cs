@@ -45,6 +45,8 @@ WebApplication app = null;
         .AddErrorDescriber<CustomIdentityErrorDescriber>();
 
     builder.Services.AddJwtAuthentication();
+
+    builder.Services.AddKendo();
 }
 #endregion
 

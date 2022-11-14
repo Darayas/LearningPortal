@@ -14,6 +14,7 @@
     <Folder Include="wwwroot\Admin\css\" />
     <Folder Include="wwwroot\Admin\images\" />
     <Folder Include="wwwroot\Admin\js\" />
+    <Folder Include="wwwroot\lib\KendoUI\" />
     <Folder Include="wwwroot\Shared\css\" />
     <Folder Include="wwwroot\Shared\images\" />
     <Folder Include="wwwroot\User\js\" />
@@ -33,6 +34,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Telerik.UI.for.AspNet.Core" Version="2022.1.301" />
   </ItemGroup>
 
   <ItemGroup>

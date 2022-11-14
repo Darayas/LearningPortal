@@ -18,6 +18,7 @@ namespace LearningPortal.Domain.Users.UserAgg.Entities
         public string SmsHashCode { get; set; }
         public DateTime? LastTryToSendSms { get; set; }
         public string Bio { get; set; }
+        public DateTime RegisterDate { get; set; }
         public virtual tblAccessLevels tblAccessLevels { get; set; }
         public virtual tblFiles tblProfileImg { get; set; }
         public virtual ICollection<tblUserRoles> tblUserRoles { get; set; }
