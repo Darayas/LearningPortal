@@ -90,3 +90,6 @@ function Logout() {
 function ReloadPage() {
     location.reload();
 }
+function forgeryToken() {
+    return kendo.antiForgeryTokens()
+}

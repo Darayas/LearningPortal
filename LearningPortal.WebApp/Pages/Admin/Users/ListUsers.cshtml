@@ -4,6 +4,9 @@
     Layout = "~/Pages/Shared/_UserLayout.cshtml";
 }
 
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@Html.AntiForgeryToken()
+
 <div class="middle-sidebar-bottom bg-lightblue theme-dark-bg">
     <div class="middle-sidebar-left">
         <div class="middle-wrap">
@@ -13,8 +16,7 @@
                     <h4 class="font-xs text-white fw-600 mr-4 mb-0 mt-2">لیست کاربران</h4>
                 </div>
                 <div class="card-body p-lg-5 p-4 w-100 border-0 ">
-                    @(
-                        Html.Kendo()
+                    @(Html.Kendo()
                         .Grid<vmListUsers>()
                         .Name("ListUsers")
                         .DefaultSettings(Localizer)
@@ -26,11 +28,19 @@
                             col.Bound(a => a.AccessLevelTitle).Width(100).Sortable(false);
                             col.Bound(a => a.Date).Width(100).Sortable(false);
                             col.Bound(a => a.IsActive).HtmlAttributes(new { style = "text-align:center;" }).ClientTemplate("<img style='width:32px' src='/Shared/img/#=IsActive#.png'/>").Width(50).Sortable(false);
+                            col.Bound(a => a).Width(50).Title(" ")
+                            .HtmlAttributes(new { style = "overflow:visible; text-align:center;" })
+                            .ClientHeaderTemplate("<button class='btn btn-primary btn-sm mr-1 ml-1' onclick='SearchModal()'><i class='fa fa-search'></i></button>")
+                            .ClientTemplateId("DropDownCmd");
                         })
-                        )
+                        .DataSource(ds => ds.Ajax().PageSize(10).Read(read => read.Url($"/{CultureInfo.CurrentCulture.Parent.Name}/Admin/ListUsers?handler=ReadData").Data("forgeryToken"))))
                 </div>
             </div>
             <!-- <div class="card w-100 border-0 p-2"></div> -->
         </div>
     </div>
 </div>
+
+<script id="DropDownCmd">
+
+</script>

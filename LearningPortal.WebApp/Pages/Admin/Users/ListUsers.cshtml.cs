@@ -1,4 +1,6 @@
+using Kendo.Mvc.UI;
 using LearningPortal.Application.App.User;
+using LearningPortal.Framework.Common.DataAnnotations.String;
 using LearningPortal.Framework.Contracts;
 using LearningPortal.WebApp.Authentication;
 using LearningPortal.WebApp.Common.Utility.MessageBox;
@@ -6,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
+using System.Threading.Tasks;
 
 namespace LearningPortal.WebApp.Pages.Admin.Users
 {
@@ -19,6 +22,11 @@ namespace LearningPortal.WebApp.Pages.Admin.Users
         private readonly IUserApplication _UserApplication;
 
         public IActionResult OnGet()
+        {
+            return Page();
+        }
+
+        public async Task<IActionResult> OnPostReadDataAsync([DataSourceRequest] DataSourceRequest request)
         {
             return Page();
         }

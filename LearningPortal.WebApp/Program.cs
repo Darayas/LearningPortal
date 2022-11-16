@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Collections.Generic;
 using System.Globalization;
+using Newtonsoft.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 WebApplication app = null;
@@ -35,7 +36,8 @@ WebApplication app = null;
     builder.Services.AddRazorPage()
                     .AddFilters()
                     .AddCustomViewLocalization("Localization/Resource")
-                    .AddCustomDataAnnotationLocalization(builder.Services, typeof(SharedResource));
+                    .AddCustomDataAnnotationLocalization(builder.Services, typeof(SharedResource))
+                    .AddNewtonsoftJson(opt => opt.SerializerSettings.ContractResolver = new DefaultContractResolver());
 
     builder.Services.Injection();
 
