@@ -13,6 +13,7 @@ using LearningPortal.Application.Contract.ApplicationDTO.Users;
 using LearningPortal.Domain.Users.UserAgg.Contracts;
 using LearningPortal.Domain.Users.UserAgg.Entities;
 using LearningPortal.Framework.Common.ExMethod;
+using LearningPortal.Framework.Common.Utilities.Paging;
 using LearningPortal.Framework.Const;
 using LearningPortal.Framework.Contracts;
 using LearningPortal.Framework.Exceptions;
@@ -81,7 +82,8 @@ namespace LearningPortal.Application.App.User
                         EmailConfirmed=false,
                         FullName=Input.FullName,
                         UserName=Input.Email,
-                        IsActive=true
+                        IsActive=true,
+                        RegisterDate=DateTime.Now
                     };
 
                     var _Result = await _UserRepository.CreateUserAsync(tUser, Input.Password);
@@ -136,7 +138,8 @@ namespace LearningPortal.Application.App.User
                         FullName="",
                         UserName=Input.PhoneNumber,
                         PhoneNumber=Input.PhoneNumber,
-                        IsActive=true
+                        IsActive=true,
+                        RegisterDate=DateTime.Now
                     };
 
                     var _Result = await _UserRepository.CreateUserAsync(tUser, "123456");
@@ -1240,6 +1243,49 @@ namespace LearningPortal.Application.App.User
             {
                 _Logger.Error(ex);
                 return new OperationResult().Failed("Error500");
+            }
+        }
+
+        public async Task<OperationResult<OutGetListUsersForManage>> GetListUsersForManageAsync(InpGetListUsersForManage Input)
+        {
+            try
+            {
+                #region Validation
+                Input.CheckModelState(_ServiceProvider);
+                #endregion
+
+                var qData = _UserRepository.Get
+                                        .Select(a => new OutGetListUsersForManageItems
+                                        {
+                                            Id = a.Id.ToString(),
+                                            FullName = a.FullName,
+                                            AccessLevelTitle = a.tblAccessLevels.Name,
+                                            Date = a.RegisterDate,
+                                            IsActive = a.IsActive,
+                                            ProfileImgUrl = a.tblProfileImg.tblFilePaths.tblFileServer.HttpDomin
+                                                                + a.tblProfileImg.tblFilePaths.tblFileServer.HttpPath
+                                                                + a.tblProfileImg.tblFilePaths.Path
+                                                                + a.tblProfileImg.FileName
+                                        })
+                                        .OrderByDescending(a => a.Date);
+
+                var _PagingData = PagingData.Calc(await qData.LongCountAsync(), Input.Page, Input.Take);
+
+                return new OperationResult<OutGetListUsersForManage>().Succeeded(new OutGetListUsersForManage
+                {
+                    Paging = _PagingData,
+                    Items = await qData.Skip(_PagingData.Skip).Take(_PagingData.Take).ToListAsync()
+                });
+            }
+            catch (ArgumentInvalidException ex)
+            {
+                _Logger.Debug(ex);
+                return new OperationResult<OutGetListUsersForManage>().Failed(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _Logger.Error(ex);
+                return new OperationResult<OutGetListUsersForManage>().Failed("Error500");
             }
         }
     }

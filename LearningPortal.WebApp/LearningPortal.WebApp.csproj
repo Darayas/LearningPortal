@@ -16,7 +16,6 @@
     <Folder Include="wwwroot\Admin\js\" />
     <Folder Include="wwwroot\lib\KendoUI\" />
     <Folder Include="wwwroot\Shared\css\" />
-    <Folder Include="wwwroot\Shared\images\" />
     <Folder Include="wwwroot\User\js\" />
     <Folder Include="wwwroot\User\images\" />
   </ItemGroup>

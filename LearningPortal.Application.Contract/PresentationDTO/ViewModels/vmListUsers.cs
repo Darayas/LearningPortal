@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace LearningPortal.Application.Contract.PresentationDTO.ViewModels
 {
@@ -20,6 +21,6 @@ namespace LearningPortal.Application.Contract.PresentationDTO.ViewModels
         public bool IsActive { get; set; }
 
         [Display(Name = "RegisterDate")]
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
     }
 }

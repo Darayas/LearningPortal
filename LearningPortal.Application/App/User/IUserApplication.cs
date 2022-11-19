@@ -10,6 +10,7 @@ namespace LearningPortal.Application.App.User
         Task<OperationResult> ConfirmAccountByEmailTokenAsync(InpConfirmAccountByEmailToken Input);
         Task<OperationResult> ConfirmationEmailAccountAsync(InpConfirmationEmailAccount Input);
         Task<OperationResult<string>> GetIdByPhoneNumberAsync(InpGetIdByPhoneNumber Input);
+        Task<OperationResult<OutGetListUsersForManage>> GetListUsersForManageAsync(InpGetListUsersForManage Input);
         Task<OperationResult<OutGetUserDetailsForLogin>> GetUserDetailsForLoginAsync(InpGetUserDetailsForLogin Input);
         Task<OperationResult<OutGetUserForEditProfile>> GetUserForEditProfileAsync(InpGetUserForEditProfile Input);
         Task<OperationResult> LoginByDisposableLinkStep1Async(InpLoginByDisposableLinkStep1 Input);

@@ -617,6 +617,9 @@ namespace LearningPortal.Infrastructure.EFCore.Migrations
                         .HasMaxLength(150)
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<DateTime>("RegisterDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 

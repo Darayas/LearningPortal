@@ -1,13 +1,19 @@
+using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
 using LearningPortal.Application.App.User;
+using LearningPortal.Application.Contract.ApplicationDTO.Users;
+using LearningPortal.Application.Contract.PresentationDTO.ViewModels;
 using LearningPortal.Framework.Common.DataAnnotations.String;
 using LearningPortal.Framework.Contracts;
+using LearningPortal.Framework.Exceptions;
 using LearningPortal.WebApp.Authentication;
 using LearningPortal.WebApp.Common.Utility.MessageBox;
+using Mapster;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace LearningPortal.WebApp.Pages.Admin.Users
@@ -21,6 +27,15 @@ namespace LearningPortal.WebApp.Pages.Admin.Users
         private readonly IServiceProvider _ServiceProvider;
         private readonly IUserApplication _UserApplication;
 
+        public ListUsersModel(ILogger logger, IMsgBox msgBox, ILocalizer localizer, IServiceProvider serviceProvider, IUserApplication userApplication)
+        {
+            _Logger=logger;
+            _MsgBox=msgBox;
+            _Localizer=localizer;
+            _ServiceProvider=serviceProvider;
+            _UserApplication=userApplication;
+        }
+
         public IActionResult OnGet()
         {
             return Page();
@@ -28,7 +43,37 @@ namespace LearningPortal.WebApp.Pages.Admin.Users
 
         public async Task<IActionResult> OnPostReadDataAsync([DataSourceRequest] DataSourceRequest request)
         {
-            return Page();
+            try
+            {
+                #region Validation
+                {
+
+                }
+                #endregion
+
+                var _Result = await _UserApplication.GetListUsersForManageAsync(new InpGetListUsersForManage
+                {
+                    Take = request.PageSize,
+                    Page = request.Page
+                });
+                if (!_Result.IsSucceeded)
+                    return StatusCode(400);
+
+                var _DataGrid = _Result.Data.Items.ToDataSourceResult(request);
+                _DataGrid.Total = (int)_Result.Data.Paging.CountAllItems;
+                _DataGrid.Data = _Result.Data.Items;
+
+                return new JsonResult(_DataGrid);
+            }
+            catch (ArgumentInvalidException)
+            {
+                return StatusCode(400);
+            }
+            catch (Exception ex)
+            {
+                _Logger.Error(ex);
+                return StatusCode(500);
+            }
         }
     }
 }
