@@ -2,6 +2,7 @@ using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
 using LearningPortal.Application.App.User;
 using LearningPortal.Application.Contract.ApplicationDTO.Users;
+using LearningPortal.Application.Contract.PresentationDTO.ViewInputs;
 using LearningPortal.Application.Contract.PresentationDTO.ViewModels;
 using LearningPortal.Framework.Common.DataAnnotations.String;
 using LearningPortal.Framework.Contracts;
@@ -75,5 +76,8 @@ namespace LearningPortal.WebApp.Pages.Admin.Users
                 return StatusCode(500);
             }
         }
+
+        [BindProperty(SupportsGet = true)]
+        public viListUsers Input { get; set; }
     }
 }

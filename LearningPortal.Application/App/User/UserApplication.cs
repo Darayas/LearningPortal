@@ -1262,6 +1262,10 @@ namespace LearningPortal.Application.App.User
                                             AccessLevelTitle = a.tblAccessLevels.Name,
                                             Date = a.RegisterDate,
                                             IsActive = a.IsActive,
+                                            Email=a.Email,
+                                            PhoneNumber=a.PhoneNumber,
+                                            EmailConfirm=a.EmailConfirmed,
+                                            PhoneNumberConfirmed=a.PhoneNumberConfirmed,    
                                             ProfileImgUrl = a.tblProfileImg.tblFilePaths.tblFileServer.HttpDomin
                                                                 + a.tblProfileImg.tblFilePaths.tblFileServer.HttpPath
                                                                 + a.tblProfileImg.tblFilePaths.Path

@@ -22,5 +22,17 @@ namespace LearningPortal.Application.Contract.PresentationDTO.ViewModels
 
         [Display(Name = "RegisterDate")]
         public DateTime Date { get; set; }
+
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+
+        [Display(Name = "EmailConfirm")]
+        public bool EmailConfirm { get; set; }
+
+        [Display(Name = "PhoneNumber")]
+        public string PhoneNumber { get; set; }
+
+        [Display(Name = "PhoneNumberConfirmed")]
+        public bool PhoneNumberConfirmed { get; set; }
     }
 }

@@ -24,7 +24,7 @@
                         {
                             col.Bound(a => a.Id).Hidden().HtmlAttributes(new { @class = "RowId" }).Sortable(false);
                             col.Bound(a => a.ProfileImgUrl).ClientTemplate("<img style='width:64px' src='#=ProfileImgUrl#'/>").Width(50).Sortable(false);
-                            col.Bound(a => a.FullName).Sortable(false);
+                            col.Bound(a => a.FullName).ClientTemplateId("FullNameTmplId").Sortable(false);
                             col.Bound(a => a.AccessLevelTitle).Width(100).Sortable(false);
                             col.Bound(a => a.Date).Width(100).ClientTemplate("#=kendo.toString(kendo.parseDate(Date), 'yyyy-MM-dd HH:mm')#").Sortable(false);
                             col.Bound(a => a.IsActive).HtmlAttributes(new { style = "text-align:center;" }).ClientTemplate("<img style='width:32px' src='/Shared/img/#=IsActive#.png'/>").Width(50).Sortable(false);
@@ -41,6 +41,92 @@
     </div>
 </div>
 
-<script id="DropDownCmd">
+<div class="modal" id="SearchModal">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">گزینه ها</h5>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="frmSearch">
+                    <div class="form-group">
+                        <label asp-for="Input.FullName"></label>
+                        <input asp-for="Input.FullName" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.Email"></label>
+                        <input asp-for="Input.Email" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.PhoneNumber"></label>
+                        <input asp-for="Input.PhoneNumber" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.Sort"></label>
+                        <select asp-for="Input.Sort" class="form-control" >
+                            <option value="0">تاریخ ثبت نام (نزولی)</option>
+                            <option value="1">تاریخ ثبت نام (صعودی)</option>
+                            <option value="2">وضعیت (نزولی)</option>
+                            <option value="3">وضعیت (صعودی)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" onclick="Search()" class="btn btn-success">اعمال</button>
+                        <button type="button" onclick="ResetSearch()" class="btn btn-warning">پاک کردن</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
+<script id="DropDownCmd">
+    <div class="item-action dropdown">
+        <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fa fa-bars fs-16 text-dark"> </i></a >
+        <div class="dropdown-menu dropdown-menu-left">
+            <a class="dropdown-item">تایید ایمیل</a>
+            <a class="dropdown-item">تایید موبایل</a>
+            <a class="dropdown-item">قفل کردن</a>
+            <a class="dropdown-item">سطح دسترسی</a>
+            <a class="dropdown-item">جزئیات</a>
+        </div>
+    </div>
+</script>
+
+<script id="FullNameTmplId">
+    <div>#:FullName#</div>
+    <div class="#=Email==null?'hidden':''#">
+        <span><img style='width:16px' src='/Shared/img/#=EmailConfirm#.png' /> </span>
+        <span>#=Email#</span>
+    </div>
+    <div class="#=PhoneNumber==null?'hidden':''#">
+        <span><img style='width:16px' src='/Shared/img/#=PhoneNumberConfirmed#.png' /> </span>
+        <span>#=PhoneNumber#</span>
+    </div>
+</script>
+
+<script>
+    function SearchModal(){
+        $('#SearchModal').modal({ keyboard: false, backdrop : false});
+    }
+
+    function Search()
+    {
+        var _FullName = $('#Input_FullName').val();
+        var _Email = $('#Input_Email').val();
+        var _PhoneNumber = $('#Input_PhoneNumber').val();
+        var _Sort = $('#Input_Sort').val();
+
+
+    }
+
+    function ResetSearch()
+    {
+        $('#frmSearch').trigger("reset");
+
+        Search();
+    }
 </script>

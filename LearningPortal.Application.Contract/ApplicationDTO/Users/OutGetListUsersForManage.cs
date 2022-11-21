@@ -23,5 +23,9 @@ namespace LearningPortal.Application.Contract.ApplicationDTO.Users
         public string AccessLevelTitle { get; set; }
         public bool IsActive { get; set; }
         public DateTime Date { get; set; }
+        public string Email { get; set; }
+        public bool EmailConfirm { get; set; }
+        public string PhoneNumber { get; set; }
+        public bool PhoneNumberConfirmed { get; set; }
     }
 }

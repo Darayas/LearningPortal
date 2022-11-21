@@ -16361,6 +16361,16 @@ body {
   margin-bottom: 5px;
 }
 
+.hidden {
+  display: none !important;
+}
+
+.modal .modal-content .close {
+  right: unset !important;
+  left: 10px;
+  top: 20px !important;
+}
+
 .course-slider {
   height: 410px;
   background-color: #000;
