@@ -9,8 +9,7 @@
 
         public const string CanManageUser = "CanManageUser";
         public const string CanDeleteUser = "CanDeleteUser";
-        public const string CanLockUser = "CanLockUser";
-        public const string CanUnLockUser = "CanUnLockUser";
+        public const string CanChangeStatusUser = "CanChangeStatusUser";
 
     }
 }

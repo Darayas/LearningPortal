@@ -119,31 +119,17 @@ namespace LearningPortal.Infrastructure.EFCore.Data.Seed
                     }, default, false);
                 }
 
-                if (!await _RepRoles.Get.Where(a => a.Name=="CanLockUser").AnyAsync())
+                if (!await _RepRoles.Get.Where(a => a.Name=="CanChangeStatusUser").AnyAsync())
                 {
                     await _RepRoles.AddAsync(new tblRoles
                     {
                         Id=new Guid().SequentialGuid(),
                         ParentId=_Id,
-                        Name="CanLockUser",
-                        NormalizedName="CanLockUser".ToUpper(),
+                        Name="CanChangeStatusUser",
+                        NormalizedName="CanChangeStatusUser".ToUpper(),
                         PageName="UserPage",
                         Sort=50,
-                        Description="توانایی قفل حساب کاربر"
-                    }, default, false);
-                }
-
-                if (!await _RepRoles.Get.Where(a => a.Name=="CanUnLockUser").AnyAsync())
-                {
-                    await _RepRoles.AddAsync(new tblRoles
-                    {
-                        Id=new Guid().SequentialGuid(),
-                        ParentId=_Id,
-                        Name="CanUnLockUser",
-                        NormalizedName="CanUnLockUser".ToUpper(),
-                        PageName="UserPage",
-                        Sort=60,
-                        Description="توانایی باز کردن قفل حساب کاربر"
+                        Description="توانایی تغییر وضعیت حساب کاربر"
                     }, default, false);
                 }
             }

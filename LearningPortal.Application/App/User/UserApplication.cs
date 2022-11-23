@@ -1254,7 +1254,10 @@ namespace LearningPortal.Application.App.User
                 Input.CheckModelState(_ServiceProvider);
                 #endregion
 
-                var qData = _UserRepository.Get
+                #region Get Data
+                IQueryable<OutGetListUsersForManageItems> qData;
+                {
+                    qData = _UserRepository.Get
                                         .Select(a => new OutGetListUsersForManageItems
                                         {
                                             Id = a.Id.ToString(),
@@ -1265,21 +1268,77 @@ namespace LearningPortal.Application.App.User
                                             Email=a.Email,
                                             PhoneNumber=a.PhoneNumber,
                                             EmailConfirm=a.EmailConfirmed,
-                                            PhoneNumberConfirmed=a.PhoneNumberConfirmed,    
+                                            PhoneNumberConfirmed=a.PhoneNumberConfirmed,
                                             ProfileImgUrl = a.tblProfileImg.tblFilePaths.tblFileServer.HttpDomin
                                                                 + a.tblProfileImg.tblFilePaths.tblFileServer.HttpPath
                                                                 + a.tblProfileImg.tblFilePaths.Path
                                                                 + a.tblProfileImg.FileName
-                                        })
-                                        .OrderByDescending(a => a.Date);
+                                        });
+                }
+                #endregion
 
-                var _PagingData = PagingData.Calc(await qData.LongCountAsync(), Input.Page, Input.Take);
-
-                return new OperationResult<OutGetListUsersForManage>().Succeeded(new OutGetListUsersForManage
+                #region Condition
                 {
-                    Paging = _PagingData,
-                    Items = await qData.Skip(_PagingData.Skip).Take(_PagingData.Take).ToListAsync()
-                });
+                    if (Input.FullName != null)
+                        qData = qData.Where(a => a.FullName.Contains(Input.FullName));
+
+                    if (Input.Email != null)
+                        qData = qData.Where(a => a.Email.Contains(Input.Email));
+
+                    if (Input.PhoneNumber != null)
+                        qData = qData.Where(a => a.PhoneNumber.Contains(Input.PhoneNumber));
+                }
+                #endregion
+
+                #region Sorting
+                {
+                    switch (Input.Sort)
+                    {
+                        case InpGetListUsersForManageSortingEnum.Date_Des:
+                            {
+                                qData = qData.OrderByDescending(a => a.Date);
+                                break;
+                            }
+                        case InpGetListUsersForManageSortingEnum.Date_Aes:
+                            {
+                                qData = qData.OrderBy(a => a.Date);
+                                break;
+                            }
+                        case InpGetListUsersForManageSortingEnum.Status_Des:
+                            {
+                                qData = qData.OrderByDescending(a => a.IsActive);
+                                break;
+                            }
+                        case InpGetListUsersForManageSortingEnum.Status_Aes:
+                            {
+                                qData = qData.OrderBy(a => a.IsActive);
+                                break;
+                            }
+                        default:
+                            {
+                                qData = qData.OrderByDescending(a => a.Date);
+                                break;
+                            }
+                    }
+                }
+                #endregion
+
+                #region Paging
+                OutPagingData _PagingData;
+                {
+                    _PagingData = PagingData.Calc(await qData.LongCountAsync(), Input.Page, Input.Take);
+                }
+                #endregion
+
+                #region Structuring And Return Data
+                {
+                    return new OperationResult<OutGetListUsersForManage>().Succeeded(new OutGetListUsersForManage
+                    {
+                        Paging = _PagingData,
+                        Items = await qData.Skip(_PagingData.Skip).Take(_PagingData.Take).ToListAsync()
+                    });
+                }
+                #endregion
             }
             catch (ArgumentInvalidException ex)
             {

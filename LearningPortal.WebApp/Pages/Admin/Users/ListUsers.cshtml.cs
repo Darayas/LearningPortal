@@ -3,18 +3,14 @@ using Kendo.Mvc.UI;
 using LearningPortal.Application.App.User;
 using LearningPortal.Application.Contract.ApplicationDTO.Users;
 using LearningPortal.Application.Contract.PresentationDTO.ViewInputs;
-using LearningPortal.Application.Contract.PresentationDTO.ViewModels;
-using LearningPortal.Framework.Common.DataAnnotations.String;
 using LearningPortal.Framework.Contracts;
 using LearningPortal.Framework.Exceptions;
 using LearningPortal.WebApp.Authentication;
 using LearningPortal.WebApp.Common.Utility.MessageBox;
-using Mapster;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace LearningPortal.WebApp.Pages.Admin.Users
@@ -55,7 +51,11 @@ namespace LearningPortal.WebApp.Pages.Admin.Users
                 var _Result = await _UserApplication.GetListUsersForManageAsync(new InpGetListUsersForManage
                 {
                     Take = request.PageSize,
-                    Page = request.Page
+                    Page = request.Page,
+                    Email=Input.Email,
+                    FullName=Input.FullName,
+                    PhoneNumber=Input.PhoneNumber,
+                    Sort=(InpGetListUsersForManageSortingEnum)Input.FieldSort
                 });
                 if (!_Result.IsSucceeded)
                     return StatusCode(400);

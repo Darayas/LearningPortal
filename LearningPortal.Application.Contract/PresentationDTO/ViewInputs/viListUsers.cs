@@ -18,6 +18,6 @@ namespace LearningPortal.Application.Contract.PresentationDTO.ViewInputs
         public string PhoneNumber { get; set; }
 
         [Display(Name = "Sort")]
-        public int Sort { get; set; }
+        public int FieldSort { get; set; }
     }
 }

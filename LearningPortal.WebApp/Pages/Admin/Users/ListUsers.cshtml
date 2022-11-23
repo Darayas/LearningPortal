@@ -4,6 +4,8 @@
     Layout = "~/Pages/Shared/_UserLayout.cshtml";
 }
 
+@using LearningPortal.Application.Contract.ApplicationDTO.Users
+
 @inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
 @Html.AntiForgeryToken()
 
@@ -65,12 +67,12 @@
                         <input asp-for="Input.PhoneNumber" class="form-control" />
                     </div>
                     <div class="form-group">
-                        <label asp-for="Input.Sort"></label>
-                        <select asp-for="Input.Sort" class="form-control" >
-                            <option value="0">تاریخ ثبت نام (نزولی)</option>
-                            <option value="1">تاریخ ثبت نام (صعودی)</option>
-                            <option value="2">وضعیت (نزولی)</option>
-                            <option value="3">وضعیت (صعودی)</option>
+                        <label asp-for="Input.FieldSort"></label>
+                        <select asp-for="Input.FieldSort" class="form-control" >
+                            <option value="@((int)InpGetListUsersForManageSortingEnum.Date_Des)">تاریخ ثبت نام (نزولی)</option>
+                            <option value="@((int)InpGetListUsersForManageSortingEnum.Date_Aes)">تاریخ ثبت نام (صعودی)</option>
+                            <option value="@((int)InpGetListUsersForManageSortingEnum.Status_Des)">وضعیت (نزولی)</option>
+                            <option value="@((int)InpGetListUsersForManageSortingEnum.Status_Aes)">وضعیت (صعودی)</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -87,9 +89,17 @@
     <div class="item-action dropdown">
         <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fa fa-bars fs-16 text-dark"> </i></a >
         <div class="dropdown-menu dropdown-menu-left">
-            <a class="dropdown-item">تایید ایمیل</a>
-            <a class="dropdown-item">تایید موبایل</a>
-            <a class="dropdown-item">قفل کردن</a>
+        @if(User.IsInRole(Roles.CanChangeStatusUser))
+        {
+            <a onclick="ConfirmEmail('#=Id#')" class="dropdown-item #=EmailConfirm==true?'hidden':''#">تایید ایمیل</a>
+            <a onclick="ConfirmEmail('#=Id#')" class="dropdown-item #=EmailConfirm==true?'':'hidden'#">رد ایمیل</a>
+            
+            <a onclick="ConfirmPhoneNumber('#=Id#')" class="dropdown-item #=PhoneNumberConfirmed==true?'hidden':''#">تایید موبایل</a>
+            <a onclick="ConfirmPhoneNumber('#=Id#')" class="dropdown-item #=PhoneNumberConfirmed==true?'':'hidden'#">رد موبایل</a>
+
+            <a onclick="Lock('#=Id#')" class="dropdown-item #=IsActive==true?'hidden':''#">قفل کردن</a>
+            <a onclick="Lock('#=Id#')" class="dropdown-item #=IsActive==true?'':'hidden'#">بازکردن قفل</a>
+        }
             <a class="dropdown-item">سطح دسترسی</a>
             <a class="dropdown-item">جزئیات</a>
         </div>
@@ -118,9 +128,12 @@
         var _FullName = $('#Input_FullName').val();
         var _Email = $('#Input_Email').val();
         var _PhoneNumber = $('#Input_PhoneNumber').val();
-        var _Sort = $('#Input_Sort').val();
+        var _Sort = $('#Input_FieldSort option:selected').val();
 
-
+        var _Grid = $('#ListUsers').data('kendoGrid');
+        _Grid.dataSource.transport.options.read.url = '/@ViewData["Culture"]/Admin/ListUsers?handler=ReadData&FieldSort=' + _Sort + '&FullName=' + _FullName + '&Email=' + _Email + '&PhoneNumber=' + _PhoneNumber;
+        _Grid.dataSource.read();
+        _Grid.refresh();
     }
 
     function ResetSearch()
@@ -130,3 +143,23 @@
         Search();
     }
 </script>
+
+@if(User.IsInRole(Roles.CanChangeStatusUser))
+{
+    <script>
+        function ConfirmEmail(_Id)
+        {
+
+        }
+
+        function ConfirmPhoneNumber(_Id)
+        {
+
+        }
+
+        function Lock(_Id)
+        {
+
+        }
+    </script>
+}
